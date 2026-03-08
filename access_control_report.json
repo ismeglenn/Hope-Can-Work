@@ -1,0 +1,697 @@
+{
+    "summary": {
+        "total_tests": 46,
+        "total_violations": 18,
+        "by_severity": {
+            "CRITICAL": 4,
+            "HIGH": 2,
+            "MEDIUM": 10,
+            "LOW": 2
+        },
+        "by_type": {
+            "VERTICAL_PE": 2,
+            "MUTATION_IDOR": 8,
+            "MUTATION_PRIVILEGE_ESCALATION": 4,
+            "MUTATION_HIDDEN_ENDPOINT": 2,
+            "MUTATION_DEBUG": 2
+        },
+        "roles_tested": [
+            {
+                "role": "admin",
+                "username": "Admin",
+                "pages_crawled": 23,
+                "urls_accessible": 16,
+                "apis_found": 1
+            },
+            {
+                "role": "guest",
+                "username": "guest",
+                "pages_crawled": 7,
+                "urls_accessible": 1,
+                "apis_found": 1
+            }
+        ]
+    },
+    "violations": [
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "violation_type": "VERTICAL_PE",
+            "severity": "CRITICAL",
+            "note": "Pages are textually identical (>95% similarity)",
+            "status_code": 0,
+            "confidence": "1.0"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "violation_type": "VERTICAL_PE",
+            "severity": "CRITICAL",
+            "note": "Pages are textually identical (>95% similarity)",
+            "status_code": 0,
+            "confidence": "1.0"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7: Change employee ID to access potentially sensitive information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview: Change employee ID to access potentially sensitive performance reviews",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList: Change user ID to access potentially sensitive leave information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim?claimId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim: Change claim ID to access potentially sensitive claim information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers: Change user ID to access potentially sensitive system user information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList: Change employee ID to access potentially sensitive employee information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet: Change employee ID to access potentially sensitive timesheet information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates?candidateId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_IDOR",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates: Change candidate ID to access potentially sensitive candidate information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_PRIVILEGE_ESCALATION",
+            "severity": "HIGH",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7: Add admin parameter to potentially escalate privileges",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee?force=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_PRIVILEGE_ESCALATION",
+            "severity": "CRITICAL",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee: Add force parameter to potentially bypass restrictions",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login?username=admin",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "violation_type": "MUTATION_PRIVILEGE_ESCALATION",
+            "severity": "CRITICAL",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/auth/login: Try to login with default admin credentials",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_PRIVILEGE_ESCALATION",
+            "severity": "HIGH",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries: Add admin parameter to potentially escalate privileges",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_HIDDEN_ENDPOINT",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz: Add internal parameter to potentially access restricted buzz",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_HIDDEN_ENDPOINT",
+            "severity": "MEDIUM",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed: Add internal parameter to potentially access restricted newsfeed",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_DEBUG",
+            "severity": "LOW",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory: Add debug parameter to potentially reveal sensitive information",
+            "status_code": 200,
+            "confidence": "high"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "violation_type": "MUTATION_DEBUG",
+            "severity": "LOW",
+            "note": "AI-mutated from https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index: Add debug parameter to potentially reveal sensitive information",
+            "status_code": 200,
+            "confidence": "high"
+        }
+    ],
+    "all_results": [
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates",
+            "owner_role": "admin",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim?claimId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim?claimId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers?userId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet?employeeId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates?candidateId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates?candidateId=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates",
+            "attack_type": "IDOR"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee?force=true",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee?force=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login?username=admin",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login?username=admin",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries?admin=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#upcoming-anniversaries",
+            "attack_type": "PRIVILEGE_ESCALATION"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz",
+            "attack_type": "HIDDEN_ENDPOINT"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz",
+            "attack_type": "HIDDEN_ENDPOINT"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed",
+            "attack_type": "HIDDEN_ENDPOINT"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed?internal=true",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com//web/index.php/dashboard/index#buzz-newsfeed",
+            "attack_type": "HIDDEN_ENDPOINT"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory",
+            "attack_type": "DEBUG"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory",
+            "attack_type": "DEBUG"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "guest",
+            "status_code": 0,
+            "access_granted": false,
+            "confidence": "medium",
+            "reason": "HTTP 0 - Client error",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+            "attack_type": "DEBUG"
+        },
+        {
+            "url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index?debug=1",
+            "owner_role": "MUTATED",
+            "tester_role": "admin",
+            "status_code": 200,
+            "access_granted": true,
+            "confidence": "high",
+            "reason": "HTTP 200 - Access granted",
+            "mutation_source": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+            "attack_type": "DEBUG"
+        }
+    ]
+}

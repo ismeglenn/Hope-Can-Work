@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.DS_Store
+
+*.pdf
+*.json
+*.xlsx
+
+.env
+
+report_for_*.pdf
